@@ -1,0 +1,362 @@
+/* 继承不了的 又想全局默认 */
+
+* {
+/* border-top: 10px solid blue; */
+margin: 0;
+padding: 0;
+}
+/* 继承 */
+
+body{
+                    color:#444;
+                    font-family: sans-serif;
+                    border-top: 10px solid blue;
+                
+}
+
+
+
+
+h1,h2,h3{
+                    color: rgb(16, 152, 173);
+
+}
+
+h1 {
+  font-size: 26px;
+
+  text-transform: uppercase;
+  font-style: italic;
+  
+}
+
+h2 {
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 30px;
+
+margin-bottom: 20px;
+
+/* Margin 重叠（Margin Collapse） 是 CSS 中的一种现象，发生在两个垂直方向上的相邻元素之间的外边距相互重叠的情况下。Margin 重叠的结果是相邻元素的 margin 并不累加，而是取两个 margin 中的较大者。 */
+margin-top: 40px;
+}
+
+h4 {
+  font-size: 20px;
+
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  font-size: 20px;
+
+  line-height: 2;
+  margin-bottom: 15px;
+}
+
+ul,ol{
+margin-left: 50px;
+
+}
+
+
+li {
+  font-size: 20px;
+
+/* margin-bottom 是 CSS 中的一个属性，用于设置元素底部的外边距（margin），即元素与其下方其他元素之间的距离。 */
+  margin-bottom: 10px;
+  /* display: inline; */
+}
+
+
+/* footer p{
+font-size: 16px;
+} */
+
+/* article header p {
+                    font-style:italic;
+} */
+
+/* #是用来选择html里面中的id的 id是唯一的 */
+#author {
+                    font-style:italic;
+                    font-size:18px;
+}
+
+#copyright{
+                    font-size: 16px;
+}
+
+
+/* .用来选择html中的class元素 class可以重复 */
+.related-author{
+                    font-size:18px;
+                    font-weight:bold;
+}
+
+
+.Related{
+
+list-style: none;
+}
+
+
+.main-header{
+background-color:#f7f7f7;
+
+/* padding */
+padding: 20px 40px;
+
+margin-bottom: 60px;
+
+
+/* 通常不设置fixed heigh 固定高度 */
+/* height: 80px; */
+}
+
+article{
+                    margin-bottom: 60px;
+}
+
+.post-header{
+
+margin-bottom: 40px;
+}
+
+aside{
+background-color: #f7f7f7;
+border-top:5px solid #1098ad;
+border-bottom:5px solid #1098ad;
+padding: 50px 0px;
+width: 500px;
+}
+
+
+/* pseudo-class 伪类 */
+
+/* 这些伪类专门用于超链接元素（例如 <a> 标签），表示链接状态。 */
+
+
+
+/* 相对他的父元素的第一个子元素 */
+li:first-child {
+
+
+font-weight:bold;
+}
+
+
+
+li:last-child{
+
+font-style:italic;
+
+/* list中的最后一个元素的margin为0 */
+margin-bottom: 0;
+}
+
+li:nth-child(odd){
+                    color: red;
+}
+
+
+
+
+
+/* 你使用的 article p:first-child 选择器试图选择 article 内的第一个 <p> 元素，并将其颜色设置为红色。但根据你提供的 index.html 文件，article 元素的第一个子元素实际上是 <header>，而不是 <p>。因此，article p:first-child 并没有匹配到任何 <p> 元素，导致样式没有生效。 */
+article p:first-child{
+                    color: red;
+}
+
+
+
+
+
+
+
+
+/* Styling links */
+/* LVHA（Link, Visited, Hover, Active） */
+a:link,
+a:visited {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+
+/* text-decoration 是一个 CSS 属性，用于设置文本的装饰效果，如下划线、删除线等。它主要用于为文本添加一些视觉上的修饰。该属性可以接受以下值： */
+a:hover{
+color:orangered;
+font-weight:bold;
+text-decoration: underline dotted orange;
+}
+
+a:active{
+                    background-color: black;
+                    font-style: italic;
+}
+
+
+/* ！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！ */
+/* 看图片，解释了在css中id class 等的优先级别 */
+/* 在CSS中，伪类的优先级是基于选择器的特异性（specificity）来决定的。伪类本身没有特殊的优先级，但它们会影响选择器的特异性计算。特异性由四部分组成，每一部分的权重从高到低依次为：
+
+!important
+内联样式（直接在HTML元素上用style属性定义的样式）：优先级最高，例如：style="color: red;"。
+ID选择器：优先级较高。
+类选择器、伪类、属性选择器：如.class、:hover、[type="text"]。
+元素选择器、伪元素：如div、p、::before */
+#copyright{
+                    color: red;
+}
+
+.copyright{
+                    color: #1098ad;
+}
+
+.text{
+                    color: yellow;
+}
+
+footer p {
+                    color: green !important;
+}
+
+
+/* inherited 继承  最低的优先级*/
+/* 在CSS中，继承是指某些属性会自动从父元素传递给其子元素。继承可以让样式的应用更加简洁和一致。不过，并不是所有的CSS属性都会自动继承 */
+/* 自动继承：文本相关属性，如color和font-family。
+非自动继承：如margin、border，需要用inherit强制继承。 */
+
+
+
+
+
+/* 在您的页面中，<strong> 元素会继承其父元素 <nav> 的 font-size 属性。因此，<strong> 的字体大小将是 18px。这是因为在您的 style.css 中，nav 选择器设置了 font-size: 18px;，而 <strong> 元素没有被其他样式覆盖，所以它会继承这个属性。 */
+nav{
+                    font-size: 18px;
+}
+
+
+
+
+/* 内联样式（Inline Styles）: 具有最高的优先级。例如，使用 style="width: 500px;" 会覆盖大多数其他样式。
+ */
+
+
+
+ /* HTML 中的 <img> 标签默认的显示模式是 inline-block。这意味着它具有一些 inline 和 block 元素的混合特性： */
+.post-img{
+
+width: 100%;
+height: auto;
+/* margin: 100px; */
+}
+
+
+/* 在网页设计中，用一个大的 container 元素包裹住整个 <body> 的内容是一种常见的布局技巧 */
+.container{
+width: 700px;
+/* margin-left: auto;
+margin-right: auto; */
+margin: 0 auto;
+position: relative;
+}
+
+
+/* 不同的box模型 inline和block inline中padding和margi只对左右有效果 ！！！inline 元素无法直接设置 width 和 height!!*/
+/* inline元素中的 padding 特性
+垂直方向：inline元素的padding-top和padding-bottom会生效，但不会推动其他内容。也就是说，它不会撑开父元素的高度，只有视觉上的效果。行内元素的布局特点是不会打断行内布局，所以这种垂直填充只能在视觉上增加内容的内边距，而不会增加元素的高度。
+
+水平方向：padding-left 和 padding-right 是有效的，并且会把内容从两边推开，占据相应的水平空间。
+
+内容换行：如果inline元素被多个padding左右推开且导致内容宽度超出父容器，它可能会触发自动换行（如果父容器允许）。 */
+
+nav a:link,a:visited{
+
+/* background-color: orange;
+margin: 20px;
+padding: 20px;
+display: block; */
+}
+
+.main-header nav{
+text-align: center;
+}
+
+
+
+/* inline-block 是一种 CSS 布局模式，它结合了 inline 和 block 元素的特性，是非常常用的布局方式。inline-block 可以灵活用于创建既需要像行内元素那样在同一行排列、又需要像块级元素那样能够设置宽高和内外边距的元素。 */
+ nav a:link,a:visited{
+margin-left: 20px;
+margin-top: 20px;
+display: inline-block;
+
+ }
+
+
+ /* pseudo-class 伪类 chain串联*/
+
+ /* nav a:link:last-child,a:visited:last-child{
+margin-right: 0;
+ } */
+
+ /* 优化 */
+ nav a:last-child {
+                    margin-right: 0;
+                  }
+
+
+
+/* Normal flow和 absolute positioning */
+/* 1. Normal Flow （正常文档流）
+定义：正常文档流是 HTML 中元素默认的布局方式。元素在页面上按顺序从上到下、从左到右排列，遵循嵌套结构和块级、行内元素的特性。 */
+/* 2. Absolute Positioning （绝对定位）
+定义：绝对定位是使用 CSS 中的 position: absolute 将元素从正常文档流中移出。这样元素的定位将不再受其兄弟元素的影响，而是基于其最近的已定位父元素（即 position 属性非 static 的元素）或根元素进行定位。 */
+
+.Like{
+/* background-color: red; */
+position: absolute;
+bottom: 100px;
+right: 1px;
+padding: 30px 40px;
+font-size: 25px;
+cursor: pointer;
+}
+
+
+
+
+/* pseudo elements */
+/* 在 CSS 中，伪元素（pseudo-elements）是用于选择和样式化元素中特定部分的特殊选择器。常见的伪元素包括 ::before 和 ::after，它们允许我们在元素内容的前后添加虚拟元素，而不需要在 HTML 中额外添加标签。伪元素通常用于添加装饰性内容、图标、背景等，可以帮助提升页面的视觉效果。 */
+h1::first-letter{
+font-style: normal;
+margin-right: 5px;
+}
+
+/* 在 CSS 中，相邻兄弟选择器（Adjacent Sibling Selector）用于选择紧跟在特定元素之后的兄弟元素。它的语法是使用加号（+）符号，例如 A + B，表示选择紧跟在 A 元素之后的第一个 B 元素。 */
+h3 +p::first-line{
+color: blue;
+}
+
+h2{
+position: relative;
+
+}
+
+
+h2::after{
+content: "Top";
+background-color: yellow;
+font-size: 16px;
+font-weight: bold;
+display: inline-block;
+position: absolute;
+padding:5px 10px;
+top: -15px;
+right:-50px
+}

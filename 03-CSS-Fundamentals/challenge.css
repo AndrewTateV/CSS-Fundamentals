@@ -1,0 +1,176 @@
+*{
+margin: 0;
+padding: 0;
+}
+
+
+
+body{
+font-family: sans-serif;
+font-weight: bold;
+/* border: 5px solid; */
+line-height: 1.4;
+
+}
+
+h1{
+text-align:center;
+background-color: rgb(245, 241, 235);
+text-transform:uppercase;
+font-size: 25px;
+padding: 20px ;
+
+
+}
+h2{
+text-transform: uppercase;
+font-size: medium;
+font-weight: bolder;
+margin-top: 50px;
+}
+ul{
+padding-left: 20px;
+
+}
+h3{
+ font-size:28px;
+font-weight: bolder;
+             
+}
+
+.Free{
+     text-transform: uppercase;
+     color: grey;  
+     margin-bottom: 20px;             
+}
+
+a:link,
+a:visited{
+color: black;
+
+}
+a:hover,a:active{
+text-decoration: none;
+}
+
+.back{
+display: block;
+text-align:right;
+
+}
+
+button{
+background-color: black;
+color: white;
+text-transform: uppercase;
+position: relative;
+  top: 23px;
+font-size: 22px; 
+border: none;
+/* 指针变成小手 */
+cursor: pointer;
+width: 90%;
+height: 60px;
+
+}
+
+button:hover{
+background-color: white;
+color: black;
+
+}
+
+ul {
+                    list-style-type: square;
+                  }
+
+ul li{
+  margin-bottom: 5px;
+}
+
+
+.container{
+  border: 5px solid;
+  width: 825px;
+ 
+  margin:  140px auto;
+/* position: relative; */
+ 
+
+
+
+}
+
+.ready{
+  margin-bottom: 5px;
+}
+
+
+h1{
+  position: relative;
+}
+
+h1::after{
+content: "S A L E";
+background-color: red;
+color: white;
+position: absolute;
+left: -40px;
+top:-20px;
+font-size: 15px;
+padding:10px 25px
+
+
+}
+
+.color{
+  display: inline-block;
+/* position: absolute;
+left: 0;
+top:480px; */
+margin-top: 10px;
+
+
+
+
+}
+
+.one{
+  width: 20px;
+  height: 20px;
+ margin-right: 5px;
+
+}
+
+.two{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-color: rgb(29, 114, 187);
+}
+
+.three{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-color: red;
+}
+.four{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-color: yellow;
+}
+.five{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-color: green;
+}
+.six{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-color: brown;
+}
+
